@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pregancydoctor/housescrrens/appointments.dart';
+import 'package:pregancydoctor/housescrrens/notess.dart';
 import 'package:pregancydoctor/housescrrens/patients.dart';
 import 'package:pregancydoctor/housescrrens/selectnurses.dart';
 
@@ -35,7 +36,7 @@ class house extends StatelessWidget {
                 onTap: () {
                   Navigator.pushNamed(
                     context,
-                    notes.notesid,
+                    notess.notesid,
                   );
                 },
               )

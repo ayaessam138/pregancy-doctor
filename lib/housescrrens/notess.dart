@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pregancydoctor/constants.dart';
 
 class notess extends StatefulWidget {
   static String notesid = 'notes';
@@ -16,11 +17,11 @@ class _notessState extends State<notess> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFE57A7A),
+        backgroundColor: kprimarycolor,
         title: Text('Notes'),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xFFE57A7A),
+        backgroundColor: kprimarycolor,
         child: Icon(
           Icons.add,
           size: 35,
