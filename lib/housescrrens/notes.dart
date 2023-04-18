@@ -4,7 +4,7 @@ import '../housescrrens/addnotes.dart';
 import 'package:pregancydoctor/constants.dart';
 
 class notes extends StatelessWidget {
-  static String notesid = 'notes';
+  // static String notesid = 'notes';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

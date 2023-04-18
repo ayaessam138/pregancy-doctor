@@ -6,6 +6,7 @@ import 'package:pregancydoctor/cubit/pregancyform_cubit/pregancyform_cubit.dart'
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pregancydoctor/housescrrens/addnotes.dart';
 import 'package:pregancydoctor/housescrrens/appointments.dart';
+import 'package:pregancydoctor/housescrrens/notess.dart';
 import 'package:pregancydoctor/housescrrens/patients.dart';
 import 'package:pregancydoctor/housescrrens/selectnurses.dart';
 import 'package:pregancydoctor/screens/home_page.dart';
@@ -32,9 +33,9 @@ void main() async {
 
   runApp(EasyLocalization(
     child: pregancy(),
-    supportedLocales: L10n.all,
+    supportedLocales: const [Locale('en'), Locale('tr')],
     path: 'assets/l10n',
-    fallbackLocale: L10n.all[0],
+    fallbackLocale: const Locale('en'),
   ));
 }
 
@@ -51,16 +52,11 @@ class pregancy extends StatelessWidget {
         )
       ],
       child: MaterialApp(
-//  localizationsDelegates: context.localizationDelegates,
-//       supportedLocales: context.supportedLocales,
-//       locale: context.locale,
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
         routes: {
           homepage.homeid: (context) => homepage(),
           selectnurses.selectnursesid: (context) => selectnurses(),
-          notes.notesid: (context) => notes(),
+          notess.notesid: (context) => notess(),
           appointments.appointmentssid: (context) => appointments(),
           addnotes.addnotesid: (context) => addnotes(),
           patients.patientsid: (context) => patients(),
