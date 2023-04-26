@@ -4,16 +4,19 @@ import '../constants.dart';
 import '../weidgetes/custom_text_field.dart';
 
 class personalinfo extends StatelessWidget {
-  String? name;
-  String? Age;
-  String? Ageatmarriage;
-  String? adress;
-  String? husbandage;
-  String? LevelOfEducation, Ocuppation, Habit, HusbandHabit, HusbandOcuppation;
+  TextEditingController name;
+  TextEditingController Age;
+  TextEditingController Ageatmarriage;
+  TextEditingController adress;
+  TextEditingController husbandage;
+  TextEditingController LevelOfEducation,
+      Ocuppation,
+      Habit,
+      HusbandHabit,
+      HusbandOcuppation;
 
   personalinfo(
-      {super.key,
-      required this.name,
+      {required this.name,
       required this.Age,
       required this.Ageatmarriage,
       required this.adress,
@@ -35,9 +38,10 @@ class personalinfo extends StatelessWidget {
           },
           labeltext: 'Name',
           hinttext: 'Name',
-          onchanged: (namevalue) {
-            name = namevalue;
-          },
+          controller: name,
+          // onchanged: (namevalue) {
+          //   name = namevalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -46,32 +50,36 @@ class personalinfo extends StatelessWidget {
           valuevaldiation: (value) {
             if (value!.isEmpty) {
               return 'field required';
-            } else if (int.parse(Age!) == 40) {
-              return 'enter age';
+            } else if (int.parse(Age.text) < 40 || int.parse(Age.text) > 60) {
+              return 'please enter age between 40 and 60';
             }
+            return null;
           },
           fieldtype: TextInputType.number,
           labeltext: 'Age',
           hinttext: 'Age',
-          onchanged: (dynamic Agevalue) {
-            Age = Agevalue;
-          },
+          controller: Age,
+          // onchanged: (dynamic Agevalue) {
+          //   Age = Agevalue;
+          // },
         ),
         SizedBox(
           height: 15,
         ),
         customtextformfield(
-            valuevaldiation: (value) {
-              if (value!.isEmpty) {
-                return 'field required';
-              }
-            },
-            fieldtype: TextInputType.number,
-            labeltext: 'Age at Marriage',
-            hinttext: 'Age at Marriage',
-            onchanged: (dynamic Ageatmarriagevalue) {
-              Ageatmarriage = Ageatmarriagevalue;
-            }),
+          valuevaldiation: (value) {
+            if (value!.isEmpty) {
+              return 'field required';
+            }
+          },
+          fieldtype: TextInputType.number,
+          labeltext: 'Age at Marriage',
+          hinttext: 'Age at Marriage',
+          controller: Ageatmarriage,
+          // onchanged: (dynamic Ageatmarriagevalue) {
+          //   Ageatmarriage = Ageatmarriagevalue;
+          // }
+        ),
         SizedBox(
           height: 15,
         ),
@@ -83,9 +91,10 @@ class personalinfo extends StatelessWidget {
           },
           labeltext: 'Adress',
           hinttext: 'Adress',
-          onchanged: (dynamic Adressvalue) {
-            adress = Adressvalue;
-          },
+          controller: adress,
+          // onchanged: (dynamic Adressvalue) {
+          //   adress = Adressvalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -98,9 +107,10 @@ class personalinfo extends StatelessWidget {
           },
           labeltext: 'Level Of Education',
           hinttext: 'Level Of Education',
-          onchanged: (LevelOfEducationvalue) {
-            LevelOfEducation = LevelOfEducationvalue;
-          },
+          controller: LevelOfEducation,
+          // onchanged: (LevelOfEducationvalue) {
+          //   LevelOfEducation = LevelOfEducationvalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -113,9 +123,10 @@ class personalinfo extends StatelessWidget {
           },
           labeltext: 'Ocuppation',
           hinttext: 'Ocuppation',
-          onchanged: (Ocuppationvalue) {
-            Ocuppation = Ocuppationvalue;
-          },
+          controller: Ocuppation,
+          // onchanged: (Ocuppationvalue) {
+          //   Ocuppation = Ocuppationvalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -128,9 +139,10 @@ class personalinfo extends StatelessWidget {
           },
           labeltext: 'Habit',
           hinttext: 'Habit',
-          onchanged: (Habitvalue) {
-            Habit = Habitvalue;
-          },
+          controller: Habit,
+          // onchanged: (Habitvalue) {
+          //   Habit = Habitvalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -144,9 +156,10 @@ class personalinfo extends StatelessWidget {
           fieldtype: TextInputType.number,
           labeltext: 'Husband Age',
           hinttext: 'Husband Age',
-          onchanged: (dynamic husbandagevalue) {
-            husbandage = husbandagevalue;
-          },
+          controller: husbandage,
+          // onchanged: (dynamic husbandagevalue) {
+          //   husbandage = husbandagevalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -159,9 +172,10 @@ class personalinfo extends StatelessWidget {
           },
           labeltext: 'Husband Habit',
           hinttext: 'Husband Habit',
-          onchanged: (dynamic HusbandHabitvalue) {
-            HusbandHabit = HusbandHabitvalue;
-          },
+          controller: HusbandHabit,
+          // onchanged: (dynamic HusbandHabitvalue) {
+          //   HusbandHabit = HusbandHabitvalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -174,9 +188,10 @@ class personalinfo extends StatelessWidget {
           },
           labeltext: 'Husband Ocuppation',
           hinttext: 'Husband Ocuppation',
-          onchanged: (dynamic HusbandOcuppationvalue) {
-            HusbandOcuppation = HusbandOcuppationvalue;
-          },
+          controller: HusbandOcuppation,
+          // onchanged: (dynamic HusbandOcuppationvalue) {
+          //   HusbandOcuppation = HusbandOcuppationvalue;
+          // },
         ),
         SizedBox(
           height: 15,

@@ -6,6 +6,7 @@ import 'package:pregancydoctor/screens/obestrichistory.dart';
 import 'package:pregancydoctor/screens/personalinfo.dart';
 import 'package:pregancydoctor/screens/physicaleximination.dart';
 import 'package:pregancydoctor/weidgetes/custombutton.dart';
+import 'package:pregancydoctor/weidgetes/subtitleofpregancyform.dart';
 import '../constants.dart';
 import '../weidgetes/Dropdownbutton.dart';
 import '../weidgetes/custom_text_field.dart';
@@ -20,45 +21,63 @@ class pregancyform extends StatefulWidget {
 
 class _pregancyformState extends State<pregancyform> {
   List<String> dropDwonListValue = ['Normal', 'AbNormal'];
-  // String dropDwonValue = 'Normal';
-
   bool HeadNeckvisbility = false;
+  bool BreastsNipplesvisbility = false;
+  bool Chestvisibility = false;
+  bool TeethGumsvisibility = false;
+  bool Heartvisbility = false;
+  bool Abdomenvisbility = false;
+  bool Backbonevisbility = false;
+  bool VaricositiesExtremitiesvisibility = false;
+  bool Edemavisbility = false;
   GlobalKey<FormState> formkey = GlobalKey();
-
-//  form fields
-  String? name;
-
-  String? Age;
-
-  String? Ageatmarriage;
-
-  String? adress;
-
-  String? husbandage;
-
-  String? LevelOfEducation, Ocuppation, Habit, HusbandHabit, HusbandOcuppation;
-
-  String? AgeofMenarche,
-      DurationofMenses,
-      IntervalofCycle,
-      FallTermPregancy,
-      Pretermpregancy,
-      Abortion,
-      LiveBabies;
-
-  String? BloodGroup, RhFactor;
-
-  String? TORCH,
-      Sugar,
-      Ketone,
-      uss,
-      Height,
-      Weight,
-      PrePregancyBodyMassIndex,
-      BloodPressure,
-      Pluse;
-
-  String? dropDwonValue;
+  TextEditingController name = TextEditingController();
+  TextEditingController Age = TextEditingController();
+  TextEditingController Ageatmarriage = TextEditingController();
+  TextEditingController adress = TextEditingController();
+  TextEditingController husbandage = TextEditingController();
+  TextEditingController LevelOfEducation = TextEditingController();
+  TextEditingController Ocuppation = TextEditingController();
+  TextEditingController Habit = TextEditingController();
+  TextEditingController HusbandHabit = TextEditingController();
+  TextEditingController HusbandOcuppation = TextEditingController();
+  TextEditingController AgeofMenarche = TextEditingController();
+  TextEditingController DurationofMenses = TextEditingController();
+  TextEditingController IntervalofCycle = TextEditingController();
+  TextEditingController FallTermPregancy = TextEditingController();
+  TextEditingController Pretermpregancy = TextEditingController();
+  TextEditingController Abortion = TextEditingController();
+  TextEditingController LiveBabies = TextEditingController();
+  TextEditingController BloodGroup = TextEditingController();
+  TextEditingController RhFactor = TextEditingController();
+  TextEditingController TORCH = TextEditingController();
+  TextEditingController Sugar = TextEditingController();
+  TextEditingController Ketone = TextEditingController();
+  TextEditingController uss = TextEditingController();
+  TextEditingController Height = TextEditingController();
+  TextEditingController Weight = TextEditingController();
+  TextEditingController PrePregancyBodyMassIndex = TextEditingController();
+  TextEditingController BloodPressure = TextEditingController();
+  TextEditingController Pluse = TextEditingController();
+  String? HeadNeckdropdown;
+  TextEditingController headneckspecify = TextEditingController();
+  String? BreastsNipplesdropDwonValue;
+  TextEditingController BreastsNipplesspeficy = TextEditingController();
+  String? ChestdropDwonValue;
+  TextEditingController Chestspecify = TextEditingController();
+  String? TeethGumsdropDwonValue;
+  TextEditingController TeethGumsspecify = TextEditingController();
+  String? HeartdropDwonValue;
+  TextEditingController Heartspecify = TextEditingController();
+  String? AbdomendropDwonValue;
+  TextEditingController Abdomenspecify = TextEditingController();
+  String? BackbonedropDwonValue;
+  TextEditingController Backbonespecify = TextEditingController();
+  String? varicositiesExtremitiesValue;
+  TextEditingController varicositiesExtremitiesspecify =
+      TextEditingController();
+  String? EdemadropDwonValue;
+  TextEditingController Edemaspecify = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -70,16 +89,7 @@ class _pregancyformState extends State<pregancyform> {
         key: formkey,
         child: Column(
           children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Personal information',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: kprimarycolor,
-                    fontSize: 24),
-              ),
-            ),
+            Subtitleofpregnacyform(title: 'Personal Information'),
             SizedBox(
               height: 15,
             ),
@@ -98,16 +108,7 @@ class _pregancyformState extends State<pregancyform> {
             SizedBox(
               height: 15,
             ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Menstrual history',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: kprimarycolor,
-                    fontSize: 24),
-              ),
-            ),
+            Subtitleofpregnacyform(title: 'menstrualhistory'),
             SizedBox(
               height: 15,
             ),
@@ -119,16 +120,7 @@ class _pregancyformState extends State<pregancyform> {
             SizedBox(
               height: 15,
             ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Obstetric history',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: kprimarycolor,
-                    fontSize: 24),
-              ),
-            ),
+            Subtitleofpregnacyform(title: 'Obstetric history'),
             SizedBox(
               height: 15,
             ),
@@ -137,16 +129,7 @@ class _pregancyformState extends State<pregancyform> {
                 Pretermpregancy: Pretermpregancy,
                 Abortion: Abortion,
                 LiveBabies: LiveBabies),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Investegations',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: kprimarycolor,
-                    fontSize: 24),
-              ),
-            ),
+            Subtitleofpregnacyform(title: 'Investegations'),
             SizedBox(
               height: 15,
             ),
@@ -160,16 +143,7 @@ class _pregancyformState extends State<pregancyform> {
             SizedBox(
               height: 15,
             ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Pyshical Examination',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: kprimarycolor,
-                    fontSize: 24),
-              ),
-            ),
+            Subtitleofpregnacyform(title: 'Pyshical Examination'),
             SizedBox(
               height: 15,
             ),
@@ -182,30 +156,118 @@ class _pregancyformState extends State<pregancyform> {
             SizedBox(
               height: 15,
             ),
-            DropdownButtonFormField<String>(
-              value: dropDwonValue,
-              items: dropDwonListValue
-                  .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  child: Text(value),
-                  value: value,
-                );
-              }).toList(),
-              onChanged: (value) {
+            Dropdownbuttonformfield(
+              onchanged: (value) {
                 setState(() {
-                  dropDwonValue = value;
+                  HeadNeckdropdown = value;
                   status = value!;
                   if (status == 'Normal') {
                     HeadNeckvisbility = false;
                   } else if (status == 'AbNormal') {
                     HeadNeckvisbility = true;
                   }
-                  // print(HeadNeckvisbility);
                 });
               },
+              text: 'Head&neck',
+            ),
+            SizedBox(
+              height: 15,
             ),
             Visibility(
                 visible: HeadNeckvisbility,
+                child: customtextformfield(
+                  controller: headneckspecify,
+                  valuevaldiation: (value) {
+                    if (value!.isEmpty) {
+                      return 'field required';
+                    }
+                  },
+                  hinttext: 'Specifiy Abnormal',
+                )),
+            SizedBox(
+              height: 15,
+            ),
+            Dropdownbuttonformfield(
+              onchanged: (value) {
+                setState(() {
+                  BreastsNipplesdropDwonValue = value;
+                  status = value!;
+                  if (status == 'Normal') {
+                    BreastsNipplesvisbility = false;
+                  } else if (status == 'AbNormal') {
+                    BreastsNipplesvisbility = true;
+                  }
+                });
+              },
+              text: 'Breasts&Nipples',
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Visibility(
+                visible: BreastsNipplesvisbility,
+                child: customtextformfield(
+                  controller: BreastsNipplesspeficy,
+                  valuevaldiation: (value) {
+                    if (value!.isEmpty) {
+                      return 'field required';
+                    }
+                  },
+                  hinttext: 'Specifiy Abnormal',
+                )),
+            SizedBox(
+              height: 15,
+            ),
+            Dropdownbuttonformfield(
+              onchanged: (value) {
+                setState(() {
+                  ChestdropDwonValue = value;
+                  status = value!;
+                  if (status == 'Normal') {
+                    Chestvisibility = false;
+                  } else if (status == 'AbNormal') {
+                    Chestvisibility = true;
+                  }
+                });
+              },
+              text: 'Chest',
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Visibility(
+                visible: Chestvisibility,
+                child: customtextformfield(
+                  controller: Chestspecify,
+                  valuevaldiation: (value) {
+                    if (value!.isEmpty) {
+                      return 'field required';
+                    }
+                  },
+                  hinttext: 'Specifiy Abnormal',
+                )),
+            SizedBox(
+              height: 15,
+            ),
+            Dropdownbuttonformfield(
+              onchanged: (value) {
+                setState(() {
+                  TeethGumsdropDwonValue = value;
+                  status = value!;
+                  if (status == 'Normal') {
+                    TeethGumsvisibility = false;
+                  } else if (status == 'AbNormal') {
+                    TeethGumsvisibility = true;
+                  }
+                });
+              },
+              text: 'Teeth&Gums',
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Visibility(
+                visible: TeethGumsvisibility,
                 child: customtextformfield(
                   valuevaldiation: (value) {
                     if (value!.isEmpty) {
@@ -218,82 +280,217 @@ class _pregancyformState extends State<pregancyform> {
               height: 15,
             ),
             Dropdownbuttonformfield(
-              text: 'Teeth&Gums',
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Dropdownbuttonformfield(
-              text: 'Breasts&Nipples',
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Dropdownbuttonformfield(
-              text: 'Chest',
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Dropdownbuttonformfield(
+              onchanged: (value) {
+                setState(() {
+                  HeartdropDwonValue = value;
+                  status = value!;
+                  if (status == 'Normal') {
+                    Heartvisbility = false;
+                  } else if (status == 'AbNormal') {
+                    Heartvisbility = true;
+                  }
+                });
+              },
               text: 'Heart',
             ),
             SizedBox(
               height: 15,
             ),
+            Visibility(
+                visible: Heartvisbility,
+                child: customtextformfield(
+                  controller: Heartspecify,
+                  valuevaldiation: (value) {
+                    if (value!.isEmpty) {
+                      return 'field required';
+                    }
+                  },
+                  hinttext: 'Specifiy Abnormal',
+                )),
+            SizedBox(
+              height: 15,
+            ),
             Dropdownbuttonformfield(
+              onchanged: (value) {
+                setState(() {
+                  AbdomendropDwonValue = value;
+                  status = value!;
+                  if (status == 'Normal') {
+                    Abdomenvisbility = false;
+                  } else if (status == 'AbNormal') {
+                    Abdomenvisbility = true;
+                  }
+                });
+              },
               text: 'Abdomen',
             ),
             SizedBox(
               height: 15,
             ),
+            Visibility(
+                visible: Abdomenvisbility,
+                child: customtextformfield(
+                  controller: Abdomenspecify,
+                  valuevaldiation: (value) {
+                    if (value!.isEmpty) {
+                      return 'field required';
+                    }
+                  },
+                  hinttext: 'Specifiy Abnormal',
+                )),
+            SizedBox(
+              height: 15,
+            ),
             Dropdownbuttonformfield(
+              onchanged: (value) {
+                setState(() {
+                  BackbonedropDwonValue = value;
+                  status = value!;
+                  if (status == 'Normal') {
+                    Backbonevisbility = false;
+                  } else if (status == 'AbNormal') {
+                    Backbonevisbility = true;
+                  }
+                });
+              },
               text: 'Backbone',
             ),
             SizedBox(
               height: 15,
             ),
+            Visibility(
+                visible: Backbonevisbility,
+                child: customtextformfield(
+                  controller: Backbonespecify,
+                  valuevaldiation: (value) {
+                    if (value!.isEmpty) {
+                      return 'field required';
+                    }
+                  },
+                  hinttext: 'Specifiy Abnormal',
+                )),
+            SizedBox(
+              height: 15,
+            ),
             Dropdownbuttonformfield(
+              onchanged: (value) {
+                setState(() {
+                  varicositiesExtremitiesValue = value;
+                  status = value!;
+                  if (status == 'Normal') {
+                    VaricositiesExtremitiesvisibility = false;
+                  } else if (status == 'AbNormal') {
+                    VaricositiesExtremitiesvisibility = true;
+                  }
+                });
+              },
               text: 'Varicosities&Extremities',
             ),
             SizedBox(
               height: 15,
             ),
+            Visibility(
+                visible: VaricositiesExtremitiesvisibility,
+                child: customtextformfield(
+                  controller: varicositiesExtremitiesspecify,
+                  valuevaldiation: (value) {
+                    if (value!.isEmpty) {
+                      return 'field required';
+                    }
+                  },
+                  hinttext: 'Specifiy Abnormal',
+                )),
+            SizedBox(
+              height: 15,
+            ),
             Dropdownbuttonformfield(
+              onchanged: (value) {
+                setState(() {
+                  EdemadropDwonValue = value;
+                  status = value!;
+                  if (status == 'Normal') {
+                    Edemavisbility = false;
+                  } else if (status == 'AbNormal') {
+                    Edemavisbility = true;
+                  }
+                });
+              },
               text: 'Edema',
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Visibility(
+                visible: Edemavisbility,
+                child: customtextformfield(
+                  controller: Edemaspecify,
+                  valuevaldiation: (value) {
+                    if (value!.isEmpty) {
+                      return 'field required';
+                    }
+                  },
+                  hinttext: 'Specifiy Abnormal',
+                )),
+            SizedBox(
+              height: 15,
             ),
             custoumbutton(
                 onTap: () {
                   if (formkey.currentState!.validate()) {
                     BlocProvider.of<PregancyformCubit>(context).submitform(
-                        name: name,
-                        Age: Age,
-                        Ageatmarriage: Ageatmarriage,
-                        adress: adress,
-                        husbandage: husbandage,
-                        LevelOfEducation: LevelOfEducation,
-                        Ocuppation: Ocuppation,
-                        Habit: Habit,
-                        HusbandHabit: HusbandHabit,
-                        HusbandOcuppation: HusbandOcuppation,
-                        AgeofMenarche: AgeofMenarche,
-                        DurationofMenses: DurationofMenses,
-                        IntervalofCycle: IntervalofCycle,
-                        FallTermPregancy: FallTermPregancy,
-                        Pretermpregancy: Pretermpregancy,
-                        Abortion: Abortion,
-                        LiveBabies: LiveBabies,
-                        BloodGroup: BloodGroup,
-                        RhFactor: RhFactor,
-                        TORCH: TORCH,
-                        Sugar: Sugar,
-                        Ketone: Ketone,
-                        uss: uss,
-                        Height: Height,
-                        Weight: Weight,
-                        PrePregancyBodyMassIndex: PrePregancyBodyMassIndex,
-                        BloodPressure: BloodPressure,
-                        Pluse: Pluse);
+                        name: name.text,
+                        Age: Age.text,
+                        Ageatmarriage: Ageatmarriage.text,
+                        adress: adress.text,
+                        husbandage: husbandage.text,
+                        LevelOfEducation: LevelOfEducation.text,
+                        Ocuppation: Ocuppation.text,
+                        Habit: Habit.text,
+                        HusbandHabit: HusbandHabit.text,
+                        HusbandOcuppation: HusbandOcuppation.text,
+                        AgeofMenarche: AgeofMenarche.text,
+                        DurationofMenses: DurationofMenses.text,
+                        IntervalofCycle: IntervalofCycle.text,
+                        FallTermPregancy: FallTermPregancy.text,
+                        Pretermpregancy: Pretermpregancy.text,
+                        Abortion: Abortion.text,
+                        LiveBabies: LiveBabies.text,
+                        BloodGroup: BloodGroup.text,
+                        RhFactor: RhFactor.text,
+                        TORCH: TORCH.text,
+                        Sugar: Sugar.text,
+                        Ketone: Ketone.text,
+                        uss: uss.text,
+                        Height: Height.text,
+                        Weight: Weight.text,
+                        PrePregancyBodyMassIndex: PrePregancyBodyMassIndex.text,
+                        BloodPressure: BloodPressure.text,
+                        Pluse: Pluse.text,
+                        HeadNeckdropdown: HeadNeckdropdown,
+                        headneckspecify: headneckspecify.text ?? 'headnormal',
+                        BreastsNipplesdropDwonValue:
+                            BreastsNipplesdropDwonValue,
+                        BreastsNipplesspeficy: BreastsNipplesspeficy.text ??
+                            'BreastsNipplesnormal',
+                        ChestdropDwonValue: ChestdropDwonValue,
+                        Chestspecify: Chestspecify.text ?? 'Chestnormal',
+                        TeethGumsdropDwonValue: TeethGumsdropDwonValue,
+                        TeethGumsspecify:
+                            TeethGumsspecify.text ?? 'TeethGumsnormal',
+                        HeartdropDwonValue: HeartdropDwonValue,
+                        Heartspecify: Heartspecify.text ?? 'Heartnormal',
+                        AbdomendropDwonValue: AbdomendropDwonValue,
+                        Abdomenspecify: Abdomenspecify.text ?? 'Abdomennormal',
+                        BackbonedropDwonValue: BackbonedropDwonValue,
+                        Backbonespecify:
+                            Backbonespecify.text ?? 'Backbonenormal',
+                        varicositiesExtremitiesValue:
+                            varicositiesExtremitiesValue,
+                        varicositiesExtremitiesspecify:
+                            varicositiesExtremitiesspecify.text ??
+                                'varicositiesExtremitiesnormal',
+                        EdemadropDwonValue: EdemadropDwonValue,
+                        Edemaspecify: Edemaspecify.text ?? 'Edemanormal');
                   }
                 },
                 text: 'submit')
@@ -303,44 +500,3 @@ class _pregancyformState extends State<pregancyform> {
     )));
   }
 }
-
-// class specifyvisibilty extends StatefulWidget {
-//   const specifyvisibilty({
-//     super.key,
-//   });
-
-//   @override
-//   State<specifyvisibilty> createState() => _specifyvisibiltyState();
-// }
-
-// class _specifyvisibiltyState extends State<specifyvisibilty> {
-//   // @override
-//   // void initState() {
-//   //   // TODO: implement initState
-//   //   super.initState();
-
-//   //   // if (status == 'Normal') {
-//   //   // setState(() {
-//   //   // HeadNeckvisbility = false;
-//   //   // });
-//   //   // print(HeadNeckvisbility);
-//   //   // } else if (status == 'AbNormal') {
- 
-//   //   print(HeadNeckvisbility);
-//   // }
-  
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Visibility(
-//         visible: HeadNeckvisbility,
-//         child: customtextformfield(
-//           valuevaldiation: (value) {
-//             if (value!.isEmpty) {
-//               return 'field required';
-//             }
-//           },
-//           hinttext: 'Specifiy Abnormal',
-//         ));
-//   }
-// }

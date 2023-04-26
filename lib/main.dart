@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:l10n_flutter/examples/models/l10n.dart';
+import 'package:pregancydoctor/cubit/calender_cubit/calender_cubit.dart';
 import 'package:pregancydoctor/cubit/pregancyform_cubit/pregancyform_cubit.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pregancydoctor/housescrrens/addnotes.dart';
@@ -9,6 +10,7 @@ import 'package:pregancydoctor/housescrrens/appointments.dart';
 import 'package:pregancydoctor/housescrrens/notess.dart';
 import 'package:pregancydoctor/housescrrens/patients.dart';
 import 'package:pregancydoctor/housescrrens/selectnurses.dart';
+import 'package:pregancydoctor/screens/calander.dart';
 import 'package:pregancydoctor/screens/home_page.dart';
 import 'package:pregancydoctor/screens/pregancyform.dart';
 import 'package:pregancydoctor/screens/profile.dart';
@@ -25,18 +27,12 @@ import 'package:easy_localization/easy_localization.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(EasyLocalization(
-    child: pregancy(),
-    supportedLocales: const [Locale('en'), Locale('tr')],
-    path: 'assets/l10n',
-    fallbackLocale: const Locale('en'),
-  ));
+  runApp(pregancy());
 }
 
 class pregancy extends StatelessWidget {
@@ -49,7 +45,8 @@ class pregancy extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => PregancyformCubit(),
-        )
+        ),
+        BlocProvider(create: ((context) => CalenderCubit()))
       ],
       child: MaterialApp(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
