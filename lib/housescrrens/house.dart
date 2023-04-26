@@ -43,6 +43,9 @@ class house extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(
+          height: 16,
+        ),
         Expanded(
           child: Row(
             // mainAxisAlignment: MainAxisAlignment.spaceEvenly,

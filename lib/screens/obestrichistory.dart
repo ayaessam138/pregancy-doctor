@@ -9,7 +9,7 @@ class obertichistory extends StatelessWidget {
       required this.Abortion,
       required this.LiveBabies});
 
-  String? FallTermPregancy, Pretermpregancy, Abortion, LiveBabies;
+  TextEditingController FallTermPregancy, Pretermpregancy, Abortion, LiveBabies;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -23,9 +23,10 @@ class obertichistory extends StatelessWidget {
           fieldtype: TextInputType.number,
           labeltext: 'Fall Term Pregancy',
           hinttext: 'Fall Term Pregancy',
-          onchanged: (dynamic FallTermPregancyvalue) {
-            FallTermPregancy = FallTermPregancyvalue;
-          },
+          controller: FallTermPregancy,
+          // onchanged: (dynamic FallTermPregancyvalue) {
+          //   FallTermPregancy = FallTermPregancyvalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -39,9 +40,10 @@ class obertichistory extends StatelessWidget {
           fieldtype: TextInputType.number,
           labeltext: 'Preterm Pregancy',
           hinttext: 'Preterm Pregancy',
-          onchanged: (dynamic Pretermpregancyvalue) {
-            Pretermpregancy = Pretermpregancyvalue;
-          },
+          controller: Pretermpregancy,
+          // onchanged: (dynamic Pretermpregancyvalue) {
+          //   Pretermpregancy = Pretermpregancyvalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -55,9 +57,10 @@ class obertichistory extends StatelessWidget {
           fieldtype: TextInputType.number,
           labeltext: 'Abortion',
           hinttext: 'Abortion',
-          onchanged: (dynamic Abortionvalue) {
-            Abortion = Abortionvalue;
-          },
+          controller: Abortion,
+          // onchanged: (dynamic Abortionvalue) {
+          //   Abortion = Abortionvalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -71,9 +74,10 @@ class obertichistory extends StatelessWidget {
           fieldtype: TextInputType.number,
           labeltext: 'Live Babies',
           hinttext: 'Live Babies',
-          onchanged: (dynamic LiveBabiesvalue) {
-            LiveBabies = LiveBabiesvalue;
-          },
+          controller: LiveBabies,
+          // onchanged: (dynamic LiveBabiesvalue) {
+          //   LiveBabies = LiveBabiesvalue;
+          // },
         ),
         SizedBox(
           height: 15,

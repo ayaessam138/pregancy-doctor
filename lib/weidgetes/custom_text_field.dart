@@ -6,16 +6,18 @@ class customtextformfield extends StatelessWidget {
       this.onchanged,
       this.labeltext,
       this.fieldtype,
+      this.controller,
       required this.valuevaldiation});
   String? hinttext;
   String? labeltext;
   FormFieldValidator<String> valuevaldiation;
   Function(dynamic)? onchanged;
   TextInputType? fieldtype;
-
+  TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       keyboardType: fieldtype,
       validator: valuevaldiation,
       onChanged: onchanged,

@@ -38,7 +38,7 @@ class NavgationCubit extends Cubit<NavgationState> {
   ];
   List<Widget> Screens = [
     house(),
-    calender(),
+    calendar(),
     predection(),
     profile(),
     pregancyform()

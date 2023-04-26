@@ -8,7 +8,7 @@ class menstrualhistory extends StatelessWidget {
       {required this.DurationofMenses,
       required this.IntervalofCycle,
       required this.AgeOfMenrache});
-  String? DurationofMenses, IntervalofCycle, AgeOfMenrache;
+  TextEditingController DurationofMenses, IntervalofCycle, AgeOfMenrache;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,9 +22,10 @@ class menstrualhistory extends StatelessWidget {
           fieldtype: TextInputType.number,
           labeltext: 'Age Of Menrache',
           hinttext: 'Age Of Menrache',
-          onchanged: (dynamic AgeOfMenrachevalue) {
-            AgeOfMenrache = AgeOfMenrachevalue;
-          },
+          controller: AgeOfMenrache,
+          // onchanged: (dynamic AgeOfMenrachevalue) {
+          //   AgeOfMenrache = AgeOfMenrachevalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -38,9 +39,10 @@ class menstrualhistory extends StatelessWidget {
           fieldtype: TextInputType.number,
           labeltext: 'Duration of Menses',
           hinttext: 'Duration of Menses',
-          onchanged: (dynamic DurationofMensesvalue) {
-            DurationofMenses = DurationofMensesvalue;
-          },
+          controller: DurationofMenses,
+          // onchanged: (dynamic DurationofMensesvalue) {
+          //   DurationofMenses = DurationofMensesvalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -54,9 +56,10 @@ class menstrualhistory extends StatelessWidget {
           fieldtype: TextInputType.number,
           labeltext: 'Interval of Cycle',
           hinttext: 'Interval of Cycles',
-          onchanged: (dynamic IntervalofCyclevalue) {
-            IntervalofCycle = IntervalofCyclevalue;
-          },
+          controller: IntervalofCycle,
+          // onchanged: (dynamic IntervalofCyclevalue) {
+          //   IntervalofCycle = IntervalofCyclevalue;
+          // },
         ),
         SizedBox(
           height: 15,

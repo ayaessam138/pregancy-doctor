@@ -9,7 +9,11 @@ class physicaleximination extends StatelessWidget {
       required this.PrePregancyBodyMassIndex,
       required this.BloodPressure,
       required this.Pluse});
-  String? Height, Weight, PrePregancyBodyMassIndex, BloodPressure, Pluse;
+  TextEditingController Height,
+      Weight,
+      PrePregancyBodyMassIndex,
+      BloodPressure,
+      Pluse;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,11 +25,26 @@ class physicaleximination extends StatelessWidget {
             }
           },
           fieldtype: TextInputType.number,
+          labeltext: 'Height',
+          hinttext: 'Height',
+          controller: Height,
+          // onchanged: (dynamic Heightvalue) {
+          //   Height = Heightvalue;
+          // },
+        ),
+        customtextformfield(
+          valuevaldiation: (value) {
+            if (value!.isEmpty) {
+              return 'field required';
+            }
+          },
+          fieldtype: TextInputType.number,
           labeltext: 'Weight',
           hinttext: 'Weight',
-          onchanged: (dynamic Weightvalue) {
-            Weight = Weightvalue;
-          },
+          controller: Weight,
+          // onchanged: (dynamic Weightvalue) {
+          //   Weight = Weightvalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -39,9 +58,10 @@ class physicaleximination extends StatelessWidget {
           fieldtype: TextInputType.number,
           labeltext: 'Pre-Pregancy Body Mass Index',
           hinttext: 'Pre-Pregancy Body Mass Index',
-          onchanged: (dynamic PrePregancyBodyMassIndexvalue) {
-            PrePregancyBodyMassIndex = PrePregancyBodyMassIndexvalue;
-          },
+          controller: PrePregancyBodyMassIndex,
+          // onchanged: (dynamic PrePregancyBodyMassIndexvalue) {
+          //   PrePregancyBodyMassIndex = PrePregancyBodyMassIndexvalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -55,9 +75,10 @@ class physicaleximination extends StatelessWidget {
           fieldtype: TextInputType.number,
           labeltext: 'Blood Pressure',
           hinttext: 'Blood Pressure',
-          onchanged: (dynamic BloodPressurevalue) {
-            BloodPressure = BloodPressurevalue;
-          },
+          controller: BloodPressure,
+          // onchanged: (dynamic BloodPressurevalue) {
+          //   BloodPressure = BloodPressurevalue;
+          // },
         ),
         SizedBox(
           height: 15,
@@ -71,9 +92,10 @@ class physicaleximination extends StatelessWidget {
           fieldtype: TextInputType.number,
           labeltext: 'Pluse',
           hinttext: 'Pluse',
-          onchanged: (dynamic Plusevalue) {
-            Pluse = Plusevalue;
-          },
+          controller: Pluse,
+          // onchanged: (dynamic Plusevalue) {
+          //   Pluse = Plusevalue;
+          // },
         ),
         SizedBox(
           height: 15,
