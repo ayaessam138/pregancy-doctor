@@ -21,9 +21,11 @@ import '../housescrrens/notes.dart';
 import 'firebase_options.dart';
 import 'package:pregancydoctor/l10n/class L10n.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 // dart pub global activate flutter_gen
 import 'package:easy_localization/easy_localization.dart';
+
+import 'l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
