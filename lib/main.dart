@@ -54,6 +54,7 @@ class pregancy extends StatelessWidget {
             supportedLocales: AppLocalizations.supportedLocales,
             locale: Locale('en', ''),
             routes: {
+              Login.logid: (context) => Login(),
               homepage.homeid: (context) => homepage(),
               selectnurses.selectnursesid: (context) => selectnurses(),
               notess.notesid: (context) => notess(),
@@ -64,6 +65,6 @@ class pregancy extends StatelessWidget {
               pregancyform.pregancyformid: (context) => pregancyform(),
               patientrecord.patientrecordid: (context) => patientrecord()
             },
-            initialRoute: homepage.homeid));
+            initialRoute: Login.logid));
   }
 }
