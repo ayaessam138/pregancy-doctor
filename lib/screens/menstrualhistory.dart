@@ -54,8 +54,8 @@ class menstrualhistory extends StatelessWidget {
             }
           },
           fieldtype: TextInputType.number,
-          labeltext: 'Interval of Cycle',
-          hinttext: 'Interval of Cycles',
+          labeltext: 'Interval of Menstrual Cycle',
+          hinttext: 'Interval of Menstrual Cycle',
           controller: IntervalofCycle,
           // onchanged: (dynamic IntervalofCyclevalue) {
           //   IntervalofCycle = IntervalofCyclevalue;

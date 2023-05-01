@@ -28,7 +28,7 @@ class aboutapp extends StatelessWidget {
                 }));
               },
               child: Text(
-                'about app',
+                'About app',
                 style: TextStyle(fontSize: 20),
               ),
             ),

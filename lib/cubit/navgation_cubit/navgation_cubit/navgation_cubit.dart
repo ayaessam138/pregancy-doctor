@@ -32,7 +32,7 @@ class NavgationCubit extends Cubit<NavgationState> {
       icon: Icon(Icons.person, color: kprimarycolor),
     ),
     BottomNavigationBarItem(
-      label: 'Pregancy Form',
+      label: 'Assessment',
       icon: Icon(Icons.folder, color: kprimarycolor),
     ),
   ];

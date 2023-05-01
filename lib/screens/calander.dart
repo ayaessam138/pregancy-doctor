@@ -8,7 +8,7 @@ import '../constants.dart';
 import '../weidgetes/addeventtextfield.dart';
 
 class calendar extends StatefulWidget {
-  // static String calendarid = 'calender';
+  // static String calendarid = 'calender',
   const calendar({Key? key}) : super(key: key);
 
   @override
@@ -23,7 +23,8 @@ class _calendarState extends State<calendar> {
   DateTime? selectedCalendarDate;
   final titleController = TextEditingController();
   final descpController = TextEditingController();
-  CalendarFormat _calendarFormat = CalendarFormat.twoWeeks;
+  bool formatButtonVisible = false;
+  CalendarFormat _calendarFormat = CalendarFormat.month;
   late Map<DateTime, List<MyEvents>> mySelectedEvents;
 
   @override
@@ -89,6 +90,7 @@ class _calendarState extends State<calendar> {
                 // Calendar Header Styling
 
                 headerStyle: const HeaderStyle(
+                  formatButtonVisible: false,
                   titleTextStyle:
                       TextStyle(color: Colors.white, fontSize: 20.0),
                   decoration: BoxDecoration(
@@ -96,14 +98,14 @@ class _calendarState extends State<calendar> {
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(10))),
-                  formatButtonTextStyle:
-                      TextStyle(color: Colors.black, fontSize: 16.0),
-                  formatButtonDecoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(5.0),
-                    ),
-                  ),
+                  // formatButtonTextStyle:
+                  //     TextStyle(color: Colors.black, fontSize: 16.0),
+                  // formatButtonDecoration: BoxDecoration(
+                  //   color: Colors.white,
+                  //   borderRadius: BorderRadius.all(
+                  //     Radius.circular(5.0),
+                  //   ),
+                  // ),
                   leftChevronIcon: Icon(
                     Icons.chevron_left,
                     color: Colors.white,

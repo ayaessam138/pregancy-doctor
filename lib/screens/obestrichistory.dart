@@ -21,8 +21,8 @@ class obertichistory extends StatelessWidget {
             }
           },
           fieldtype: TextInputType.number,
-          labeltext: 'Fall Term Pregancy',
-          hinttext: 'Fall Term Pregancy',
+          labeltext: 'Full Term Birth',
+          hinttext: 'Full Term Pregnancy',
           controller: FallTermPregancy,
           // onchanged: (dynamic FallTermPregancyvalue) {
           //   FallTermPregancy = FallTermPregancyvalue;
@@ -38,8 +38,8 @@ class obertichistory extends StatelessWidget {
             }
           },
           fieldtype: TextInputType.number,
-          labeltext: 'Preterm Pregancy',
-          hinttext: 'Preterm Pregancy',
+          labeltext: 'Preterm Birth',
+          hinttext: 'Preterm Birth',
           controller: Pretermpregancy,
           // onchanged: (dynamic Pretermpregancyvalue) {
           //   Pretermpregancy = Pretermpregancyvalue;
