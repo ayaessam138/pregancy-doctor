@@ -29,7 +29,7 @@ class changeprofile extends StatelessWidget {
                 }));
               },
               child: Text(
-                'Change Profile',
+                'change profile',
                 style: TextStyle(fontSize: 20),
               ),
             ),

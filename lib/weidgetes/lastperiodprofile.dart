@@ -20,7 +20,7 @@ class lastperiodprofile extends StatelessWidget {
             height: 50,
             alignment: AlignmentDirectional.center,
             child: Text(
-              'Last menstruaL date',
+              'last period',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
             ),
           ),

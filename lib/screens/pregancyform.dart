@@ -108,7 +108,7 @@ class _pregancyformState extends State<pregancyform> {
             SizedBox(
               height: 15,
             ),
-            Subtitleofpregnacyform(title: 'Menstrual History'),
+            Subtitleofpregnacyform(title: 'menstrualhistory'),
             SizedBox(
               height: 15,
             ),

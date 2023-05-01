@@ -1,88 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pregancydoctor/constants.dart';
-import 'package:pregancydoctor/cubit/addpatient_cubit/addpatient_cubit.dart';
-import 'package:pregancydoctor/housescrrens/patientrecord.dart';
-import 'package:pregancydoctor/models/addpatient.dart';
-
-import '../weidgetes/patientdata.dart';
 
 class patients extends StatefulWidget {
   static String patientsid = 'patient';
-  patients({Key? key}) : super(key: key);
+  const patients({Key? key}) : super(key: key);
 
   @override
   State<patients> createState() => _patientsState();
 }
 
 class _patientsState extends State<patients> {
-  List<addpatient> patientlist = [];
-
-  TextEditingController patientname = TextEditingController();
-  TextEditingController patientid = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Add Patients'),
-        backgroundColor: kprimarycolor,
+        backgroundColor: Color(0xFFE57A7A),
       ),
-      body: Column(children: [
-        GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, patientrecord.patientrecordid);
-          },
-          child: Container(
-            decoration: BoxDecoration(
-                border:
-                    Border(bottom: BorderSide(color: Colors.grey, width: 0.5))),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(
-                  'Patient ID',
-                  style: TextStyle(color: kprimarycolor),
-                ),
-                Text(
-                  'Patient Name',
-                  style: TextStyle(color: kprimarycolor),
-                ),
-                Text(
-                  'Delete',
-                  style: TextStyle(color: kprimarycolor),
-                ),
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.delete,
-                      color: kprimarycolor,
-                    ))
-              ],
-            ),
-          ),
-        ),
-        BlocBuilder<AddpatientCubit, AddpatientState>(
-            builder: (context, state) {
-          if (state is Addpatientsucess) {
-            return Expanded(
-              child: ListView.builder(
-                  itemCount: state.addpatients!.length,
-                  itemBuilder: (context, index) {
-                    return patientdata(
-                      patientid: state.addpatients![index].patientid!,
-                      patientname: state.addpatients![index].patientname!,
-                    );
-                  }),
-            );
-          } else {
-            return CircularProgressIndicator();
-          }
-        })
-      ]),
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(70),
         child: FloatingActionButton(
-          backgroundColor: kprimarycolor,
+          backgroundColor: Color(0xFFE57A7A),
           child: Icon(
             Icons.add,
             color: Colors.white,
@@ -97,46 +34,29 @@ class _patientsState extends State<patients> {
                       child: Column(
                         children: [
                           TextFormField(
-                            controller: patientname,
                             decoration:
                                 InputDecoration(hintText: 'Patient Name'),
                           ),
                           TextFormField(
-                            controller: patientid,
                             decoration: InputDecoration(hintText: 'Patient ID'),
                           ),
-                          TextButton(
-                            onPressed: () {
-                              if (patientname.text.isEmpty &&
-                                  patientid.text.isEmpty) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text(
-                                        'Please Patientname And Patientid'),
-                                    duration: Duration(seconds: 3),
-                                  ),
-                                );
-                                //Navigator.pop(context);
-                                return;
-                              } else {
-                                setState(() {
-                                  BlocProvider.of<AddpatientCubit>(context)
-                                      .addpatients(
-                                          patientname: patientname.text,
-                                          patientid: patientid.text);
-                                });
-
-                                patientname.clear();
-                                patientid.clear();
-
-                                Navigator.pop(context);
-                                return;
-                              }
-                            },
-                            child: const Text(
-                              'Add',
-                              style: TextStyle(color: kprimarycolor),
-                            ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 50),
+                            child: MaterialButton(
+                                elevation: 5.0,
+                                color: Color(0xFFE57A7A),
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 20, horizontal: 80),
+                                child: Text(
+                                  'add',
+                                  style: TextStyle(
+                                      color: Color(0xFFEFEFEF),
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Lemon'),
+                                ),
+                                shape: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(50)),
+                                onPressed: () {}),
                           ),
                         ],
                       ),
